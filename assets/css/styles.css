@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;200;300&family=Exo:wght@600&family=Gajraj+One&family=Inter:wght@400;700;800&family=Josefin+Sans&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&family=Libre+Franklin:wght@300;600;700&family=Manrope:wght@500;700&family=Overpass:wght@400;700&family=Plus+Jakarta+Sans:wght@500;800&family=Poppins:ital,wght@0,400;0,600;0,700;1,700&family=Roboto&family=Space+Grotesk:wght@500&family=Space+Mono:wght@700&display=swap');
+
+
+:root {
+    --Toggle: hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    --toggle: hsl(230, 22%, 74%);
+    --Very-Dark-Blue: hsl(230, 17%, 14%);
+    --Dark-Desaturated-Blue: hsl(227, 33%, 22%);
+    --Light-Desaturated-Blue: hsl(227, 33%, 22%);
+    
+    --Desaturated-Blue: hsl(228, 34%, 66%);
+    --White-Text: hsl(0, 0%, 100%);
+    --White: hsl(0, 0%, 100%);
+    --Very-Pale-Blue: hsl(225, 100%, 98%);
+    --Light-Grayish-Blue: hsl(227, 47%, 96%);
+    --Dark-Grayish-Blue: hsl(228, 12%, 44%);
+    --Grayish-Blue: hsl(229, 47%, 93%);
+    --ff: 'roboto';
+}
+body {
+    background: var(--Light-Grayish-Blue);
+    color: black;
+    font-family: var(--ff);
+}
+
+.main { 
+    display: grid;
+    grid-template-columns: repeat(1);
+    grid-template-rows:  15% 10% 70% 0%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.date, .time {
+    text-shadow: 3px 5px 5px var(--Desaturated-Blue);
+}
+
+.navbar {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    background: var(--Light-Grayish-Blue);
+}
+
+.navbar-brand, .nav-link, .search-btn {color: var(--Very-Dark-Blue);}
+
+.form-control {
+    background: var(--Dark-Desaturated-Blue);
+    border: none;
+    box-shadow: 7px 10px 7px var(--Desaturated-Blue);
+
+}
+
+.form-control::placeholder {
+    color: var(--White-Text);
+}
+.btn { 
+    background: var(--Dark-Desaturated-Blue); 
+    color: var(--White-Text);
+    border: none;
+    margin: 0.5rem;
+    padding: .5rem .8rem;
+    box-shadow: 7px 10px 7px var(--Desaturated-Blue);
+}
+
+.forecast-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-grow: 1; */
+    gap: 2rem;
+}
+
+.search-history {
+    margin-inline: auto;
+}
+
+.forecast {
+    background: var(--Dark-Desaturated-Blue);
+    border-radius: 25px;
+    box-shadow: 10px 15px 7px var(--Desaturated-Blue);
+    padding: .5rem clamp(0rem, 4vw + .5rem, 4rem);
+    font-size: clamp(.5rem, 2vw + .5rem, 1.5rem);
+    color: var(--White-Text);
+}
+
+.footer {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
