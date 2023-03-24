@@ -21,7 +21,7 @@
 
 <body>
     <main class="main">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg h-auto">
             <div class="container-fluid d-flex align-items-center">
                 <div class="d-flex flex-column">
                     <h2 class="ms-lg-3 px-2 date" id="date" class="navbar-brand fs-3" href="#"></h2>
@@ -32,13 +32,21 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form id="form" class="d-flex ms-auto" role="search">
-                  <input id="search-input" class="form-control me-3 fs-4 px-2" type="search" placeholder="Find your location" aria-label="Search">
+                  <input id="search-input" class="form-control me-3 fs-5 px-2" type="search" placeholder="Find your location" aria-label="Search">
                   <button id="search-button" class="btn fs-5 search-btn" type="submit">Search</button>
                 </form>
               </div>
             </div>
           </nav>
-          <div id="search-history" class="search-history"></div>
+          <div class="dropdown mt-5">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Previous Searches
+            </button>
+            <ul class="dropdown-menu">
+                <button id="search-history" class="search-history" type="button"></button>
+            </ul>
+            </div>
+        <!-- <div id="search-history" class="search-history"></div> -->
         <section class="forecast-section fs-5 py-5"></section> 
     </main>
 

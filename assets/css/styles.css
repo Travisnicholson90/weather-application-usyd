@@ -47,7 +47,6 @@ body {
     background: var(--Dark-Desaturated-Blue);
     border: none;
     box-shadow: 7px 10px 7px var(--Desaturated-Blue);
-
 }
 
 .form-control::placeholder {
@@ -58,7 +57,7 @@ body {
     color: var(--White-Text);
     border: none;
     margin: 0.5rem;
-    padding: .5rem .8rem;
+    padding: .7rem .8rem;
     box-shadow: 7px 10px 7px var(--Desaturated-Blue);
 }
 
@@ -67,7 +66,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* flex-grow: 1; */
     gap: 2rem;
 }
 
@@ -79,12 +77,36 @@ body {
     background: var(--Dark-Desaturated-Blue);
     border-radius: 25px;
     box-shadow: 10px 15px 7px var(--Desaturated-Blue);
-    padding: .5rem clamp(0rem, 4vw + .5rem, 4rem);
-    font-size: clamp(.5rem, 2vw + .5rem, 1.5rem);
+    /* padding: .5rem clamp(0rem, 4vw + .5rem, 4rem); */
+    padding: 2rem;
+    font-size: clamp(1.5rem, 3vw + .5rem, 1.5rem);
     color: var(--White-Text);
+    min-width: clamp(20rem, 40vw + 1rem, 20rem);
 }
 
-.footer {
-    grid-column: 1/2;
-    grid-row: 5/6;
+.day {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 2.3vw + .5rem, 3rem);
+}
+
+.report {
+    margin-bottom: .5rem;
+}
+.report::first-letter {
+    text-transform: capitalize;
+}
+
+
+.search-history {
+    margin-top: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.dropdown-menu {
+    border: none;
+    outline: none;
+    background-color: var(--Light-Grayish-Blue);
+    
 }
