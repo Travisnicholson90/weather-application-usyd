@@ -3,8 +3,8 @@ let city;
 
 var timeDate = setInterval(function() {
     var date = dayjs().format('ddd, DD MMM YYYY')
-    var time = dayjs().format('HH : MM')    
-    $('#time').text(time)
+    var twenty4 = dayjs().format('hh : mm ss') 
+    $('#time').text(twenty4)
     $('#date').text(date)        
 }, 1000)
 
@@ -51,11 +51,15 @@ function getWeather() {
             var icon = $('<img>').attr('src', iconUrl);
             var day =  $('<p>').text(dayjs(data.list[i].dt_txt).format('dddd'));
             var report = $('<p>').text(data.list[i].weather[0].description);
-            var high = $('<p>').text(`Temp: ${data.list[i].main.temp}  \u00B0`);
-            var feelsLike = $('<p>').text(`Feels like: ${data.list[i].main.feels_like}  \u00B0`);
-            var wind = $('<p>').text(`Wind: ${data.list[i].wind.speed} kts ${data.list[i].wind.deg} \u00B0 `);
-        
-        forecast.append(icon, day, report, high, feelsLike, wind);
+            var temp = $('<p>').text(`Temp ${data.list[i].main.temp}  \u00B0`);
+            // var feelsLike = $('<p>').text(`Feels like: ${data.list[i].main.feels_like}  \u00B0`);
+            var wind = $('<p>').text(`Wind ${data.list[i].wind.speed} km/h `);
+            var humidity = $('<p>').text(`Humidity ${data.list[i].main.humidity}%`);
+            day.addClass('day');
+            report.addClass('report');
+            temp.addClass('temp');
+            wind.addClass('wind');
+        forecast.append(icon, day, report, temp, wind, humidity);
         
         
         //create an object with the weather data so it can be stored to local storage as an object 
@@ -65,9 +69,10 @@ function getWeather() {
             icon: $('<img>').attr('src', iconUrl),
             day:  $('<p>').text(dayjs(data.list[i].dt_txt).format('dddd')),
             report: $('<p>').text(data.list[i].weather[0].description),
-            high: $('<p>').text(`Temp: ${data.list[i].main.temp}  \u00B0`),
-            feelsLike: $('<p>').text(`Feels like: ${data.list[i].main.feels_like}  \u00B0`),
-            wind: $('<p>').text(`Wind: ${data.list[i].wind.speed} kts ${data.list[i].wind.deg} \u00B0 `),
+            temp: $('<p>').text(`Temp ${data.list[i].main.temp}  \u00B0`),
+            // feelsLike: $('<p>').text(`Feels like: ${data.list[i].main.feels_like}  \u00B0`),
+            wind: $('<p>').text(`Wind ${data.list[i].wind.speed} km/h `),
+            humidity: $('<p>').text(`Humidity ${data.list[i].main.humidity}%`),
         }
 
         weatherData.forecast.push(forecastData)
@@ -77,13 +82,14 @@ function getWeather() {
     console.log(weatherData);
     
 
-  $('#search-history');
+//   $('#search-history');
 
-
+// create a button for every weather search so the user can find a list of previous searches 
    for (var i = 1; i <= 1; i++) {
     var button = $('<button>').addClass('search-history-btn btn btn-outline-primary');
     $('#search-history').append(button)
     button.text(city)
+    //create an object to store the button data to local storage
     var buttonData = {
         city: city,
         className: button.attr('class'),
@@ -96,7 +102,7 @@ function getWeather() {
     
 }
 
-function retrieveButtonsFromLocalStorage() {
+function getBtnData() {
     Object.keys(localStorage).forEach(function(key) {
         if (key.startsWith('button-')) {
             var buttonData = JSON.parse(localStorage.getItem(key));
@@ -115,6 +121,6 @@ function retrieveButtonsFromLocalStorage() {
     });
 }
 
-retrieveButtonsFromLocalStorage()
+getBtnData()
 
 
