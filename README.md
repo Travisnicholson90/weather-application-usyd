@@ -23,7 +23,7 @@ Users should be able to interact with the application and view the following:
 ### Links
 
 - GitHub URL: [Travisnicholson90](https://github.com/Travisnicholson90/weather-application-usyd)
-- Live Site URL: [netlify](https:liveurl)
+- Live Site URL: [netlify](https://benevolent-crumble-1fe22c.netlify.app)
 
 ### Built with
 
